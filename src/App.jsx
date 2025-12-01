@@ -1,11 +1,17 @@
-import AppRoutes from "./routes/AppRoutes";
-import Login from "./pages/login";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Login from "./pages/Login"; // <-- Add this import
 
 function App() {
-  return <AppRoutes />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />  {/* <-- Add this route */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
-<Routes>
-  <Route path="/login" element={<Login />} />
-</Routes>
 
 export default App;
